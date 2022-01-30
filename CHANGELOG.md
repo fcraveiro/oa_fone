@@ -1,6 +1,7 @@
 ## 1.0.2
 
 * Telefone passou para Int
+* Ajustes de Tela
 
 ## 1.0.1
 

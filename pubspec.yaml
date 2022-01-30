@@ -1,6 +1,6 @@
 name: oa_fone
 description: Parte do Projeto Odonto - Abre Modal para ligações por Telefone ou WhatsApp.
-version: 1.0.1
+version: 1.0.2
 homepage: https://github.com/fcraveiro/oa_fone
 
 environment:
