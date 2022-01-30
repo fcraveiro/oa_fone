@@ -66,10 +66,5 @@ Gradle = gradle:7.0.4' distribution = gradle-7.0.2-all.zip </br>
 			<td>&nbsp;</td>
 			<td><img alt="" src="https://user-images.githubusercontent.com/31604881/151706457-7f180331-27c4-487d-ba8b-6fb07bd356d0.png" style="width: 300px; height: 633px;" /></td>
 		</tr>
-		<tr>
-			<td><img alt="" src="" style="width: 300px; height: 633px;" /></td>
-			<td>&nbsp;</td>
-			<td><img alt="" src="" style="width: 300px; height: 633px;" /></td>
-		</tr>
 	</tbody>
 </table>
