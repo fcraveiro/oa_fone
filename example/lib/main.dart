@@ -32,7 +32,8 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Examplo Ligar Paciente'),
+        title: const Text('Ligar para Paciente'),
+        backgroundColor: Colors.purple,
         centerTitle: true,
       ),
       body: Center(
@@ -41,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             ElevatedButton(
               onPressed: () => ligarContato(
-                  context, '13925223451', '91212112534', true, false),
+                  context, '113999999999', '113999999999', true, false),
               child: const Text('Click Me'),
             ),
           ],

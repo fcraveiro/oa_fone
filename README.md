@@ -1,10 +1,13 @@
+## Sobre
+
 Package para app Odonto - Abre Modal para ligações por telefone ou Whats
 
-## Features
+## Uso
 
-List what your package can do. Maybe include images, gifs, or videos.
+Abre Modal e liga para o numero informado ou manda menssagem par o Whats informado
 
 ## Getting started - Instalação
+
 
 With Dart:
 
@@ -14,7 +17,7 @@ With Flutter:
 
    $ flutter pub add oa_fone
 
-add a line like this to your package's pubspec.yaml :
+Ou no arquivo 'pubspec.yaml'
 
 environment:</br></br>
 dependencies:</br>
@@ -55,32 +58,26 @@ Flutter = Channel stable, 2.8.2-0.0.pre.1, </br>
 Android SDK version 32.0.0 kotlin = '1.6.10' </br>
 Gradle = gradle:7.0.4' distribution = gradle-7.0.2-all.zip </br>
 </br>
+
+
+![Screenshot_1643557161](https://user-images.githubusercontent.com/31604881/151706450-627cec59-746f-4948-97a9-49e30d280490.png)
+
+
+![Screenshot_1643557166](https://user-images.githubusercontent.com/31604881/151706457-7f180331-27c4-487d-ba8b-6fb07bd356d0.png)
+
+
+
 <table align="center" border="0" cellpadding="1" cellspacing="1" style="width:650px;">
 	<tbody>
 		<tr>
-			<td><img alt="" src="" style="width: 300px; height: 633px;" /></td>
+			<td><img alt="" src="https://user-images.githubusercontent.com/31604881/151706450-627cec59-746f-4948-97a9-49e30d280490.png" style="width: 300px; height: 633px;" /></td>
 			<td>&nbsp;</td>
-			<td><img alt="" src="" style="width: 300px; height: 633px;" /></td>
+			<td><img alt="" src="https://user-images.githubusercontent.com/31604881/151706457-7f180331-27c4-487d-ba8b-6fb07bd356d0.png" style="width: 300px; height: 633px;" /></td>
 		</tr>
 		<tr>
 			<td><img alt="" src="" style="width: 300px; height: 633px;" /></td>
 			<td>&nbsp;</td>
 			<td><img alt="" src="" style="width: 300px; height: 633px;" /></td>
-		</tr>
-		<tr>
-			<td><img alt="" src="" style="width: 300px; height: 633px;" /></td>
-			<td>&nbsp;</td>
-			<td><img alt="" src="" style="width: 300px; height: 633px;" /></td>
-		</tr>
-		<tr>
-			<td><img alt="" src="" style="width: 300px; height: 633px;" /></td>
-			<td>&nbsp;</td>
-			<td><img alt="" src="" style="width: 300px; height: 633px;" /></td>
-		</tr>
-		<tr>
-			<td><img alt="" src="" style="width: 300px; height: 633px;" /></td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
 		</tr>
 	</tbody>
 </table>
