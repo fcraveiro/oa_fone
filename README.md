@@ -59,14 +59,6 @@ Android SDK version 32.0.0 kotlin = '1.6.10' </br>
 Gradle = gradle:7.0.4' distribution = gradle-7.0.2-all.zip </br>
 </br>
 
-
-![Screenshot_1643557161](https://user-images.githubusercontent.com/31604881/151706450-627cec59-746f-4948-97a9-49e30d280490.png)
-
-
-![Screenshot_1643557166](https://user-images.githubusercontent.com/31604881/151706457-7f180331-27c4-487d-ba8b-6fb07bd356d0.png)
-
-
-
 <table align="center" border="0" cellpadding="1" cellspacing="1" style="width:650px;">
 	<tbody>
 		<tr>
