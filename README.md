@@ -1,49 +1,47 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
-
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+Package para app Odonto - Abre Modal para ligações por telefone ou Whats
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+List what your package can do. Maybe include images, gifs, or videos.
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+With Dart:
+
+ $ dart pub add oa_fone
+
+With Flutter:
+
+ $ flutter pub add oa_fone
+
+add a line like this to your package's pubspec.yaml :
+
+dependencies:
+  oa_fone: ^1.0.0
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+Chamar a função enviando dois numeros de telefone e se tem Whats
+Veja na pasta `/example`. 
 
-```dart
-const like = 'sample';
-```
+        child: Column(</br>
+          mainAxisAlignment: MainAxisAlignment.center,</br>
+          children: <Widget>[</br>
+            ElevatedButton(</br>
+              onPressed: () => ligarContato(</br>
+                  context, '13925223451', '91212112534', true, false),</br>
+              child: const Text('Click Me'),</br>
+            ),</br>
+          ],</br>
+        ),</br>
 
 ## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
-
 
 Janeiro/2022
 
 Package para app Odonto
 
-Abre Modal para ligações por telefone ou wjatsApp
+Abre Modal para ligações por telefone ou Whats
 
 
 Atenção - Sistema atualizado nas últimas versões
