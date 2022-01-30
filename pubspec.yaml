@@ -1,7 +1,7 @@
 name: oa_fone
-description: A new Flutter package project.
+description: Parte do Projeto Odonto - Abre Modal para ligações por Telefone ou WhatsApp.
 version: 1.0.0
-homepage: 
+homepage: https://github.com/fcraveiro/oa_fone
 
 environment:
   sdk: ">=2.15.1 <3.0.0"
