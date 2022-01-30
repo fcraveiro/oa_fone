@@ -4,7 +4,7 @@ Package para app Odonto - Abre Modal para ligações por telefone ou Whats
 
 List what your package can do. Maybe include images, gifs, or videos.
 
-## Getting started
+## Getting started - Instalação
 
 With Dart:
 
@@ -14,18 +14,14 @@ With Flutter:
 
    $ flutter pub add oa_fone
 
-
 add a line like this to your package's pubspec.yaml :
 
-environment:
-
-dependencies:
-  flutter:
-    sdk: flutter
-  oa_fone: ^1.0.1
-
-dev_dependencies:
-
+environment:</br></br>
+dependencies:</br>
+  flutter:</br>
+    sdk: flutter</br>
+  oa_fone: ^1.0.1</br></br>
+dev_dependencies:</br>
 
 ## Usage
 
