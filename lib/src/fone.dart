@@ -3,8 +3,13 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-ligarContato(
-    context, String pacFone, String pacCel, bool pacZap1, bool pacZap2) {
+bool temFone = false;
+bool temCel = false;
+
+ligarContato(context, int pacFone, int pacCel, bool pacZap1, bool pacZap2) {
+  pacFone == 9 ? {temFone = false, pacZap1 = false} : temFone = true;
+  pacCel == 9 ? {temCel = false, pacZap2 = false} : temCel = true;
+
   showModalBottomSheet(
     barrierColor: Colors.black.withOpacity(.7),
     context: context,
@@ -49,185 +54,211 @@ ligarContato(
                 width: MediaQuery.of(context).size.width,
                 child: Column(
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        SizedBox(
-                          width: 200,
-                          height: 40,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                    temFone
+                        ? Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
-                              Text(
-                                'Telefone :',
-                                style: GoogleFonts.roboto(
-                                  fontSize: 16,
-                                  letterSpacing: .2,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w500,
+                              SizedBox(
+                                width: 200,
+                                height: 40,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Telefone :',
+                                      style: GoogleFonts.roboto(
+                                        fontSize: 16,
+                                        letterSpacing: .2,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                    Text(
+                                      pacFone.toString(),
+                                      style: GoogleFonts.roboto(
+                                        fontSize: 16,
+                                        letterSpacing: .2,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    )
+                                  ],
                                 ),
                               ),
-                              Text(
-                                pacFone.toString(),
-                                style: GoogleFonts.roboto(
-                                  fontSize: 16,
-                                  letterSpacing: .2,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w400,
+                              InkWell(
+                                onTap: () => {
+                                  ligarPaciente(
+                                      'tel:${pacFone.toString()}', context)
+                                },
+                                child: Container(
+                                  width: 45,
+                                  height: 40,
+                                  decoration: BoxDecoration(
+                                    color: Colors.blue[700],
+                                    borderRadius: BorderRadius.circular(
+                                      12,
+                                    ),
+                                    border: Border.all(
+                                      color: const Color(0xFF757575),
+                                    ),
+                                  ),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: const [
+                                      FaIcon(
+                                        FontAwesomeIcons.phoneAlt,
+                                        size: 18,
+                                        color: Colors.white,
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              )
+                              ),
+                              pacZap1
+                                  ? InkWell(
+                                      onTap: () => {
+                                        openWhats(pacFone),
+                                      },
+                                      child: Container(
+                                        width: 45,
+                                        height: 40,
+                                        decoration: BoxDecoration(
+                                          color: Colors.green[700],
+                                          borderRadius: BorderRadius.circular(
+                                            12,
+                                          ),
+                                          border: Border.all(
+                                            color: const Color(0xFF757575),
+                                          ),
+                                        ),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: const [
+                                            FaIcon(
+                                              FontAwesomeIcons.whatsapp,
+                                              size: 25,
+                                              color: Colors.white,
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    )
+                                  : Container(
+                                      width: 45,
+                                      height: 40,
+                                      color: Colors.white,
+                                    ),
                             ],
+                          )
+                        : const SizedBox(
+                            height: 0,
                           ),
-                        ),
-                        InkWell(
-                          onTap: () => {
-                            ligarPaciente('tel:${pacFone.toString()}', context)
-                          },
-                          child: Container(
-                            width: 45,
-                            height: 40,
-                            decoration: BoxDecoration(
-                              color: Colors.blue[700],
-                              borderRadius: BorderRadius.circular(
-                                12,
-                              ),
-                              border: Border.all(
-                                color: const Color(0xFF757575),
-                              ),
-                            ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: const [
-                                FaIcon(
-                                  FontAwesomeIcons.phoneAlt,
-                                  size: 18,
-                                  color: Colors.white,
-                                ),
-                              ],
-                            ),
+                    temFone
+                        ? const SizedBox(
+                            height: 20,
+                          )
+                        : const SizedBox(
+                            height: 0,
                           ),
-                        ),
-                        InkWell(
-                          onTap: () => {
-                            openWhats(pacFone),
-                          },
-                          child: Container(
-                            width: 45,
-                            height: 40,
-                            decoration: BoxDecoration(
-                              color: Colors.green[700],
-                              borderRadius: BorderRadius.circular(
-                                12,
-                              ),
-                              border: Border.all(
-                                color: const Color(0xFF757575),
-                              ),
-                            ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: const [
-                                FaIcon(
-                                  FontAwesomeIcons.whatsapp,
-                                  size: 25,
-                                  color: Colors.white,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        SizedBox(
-                          width: 200,
-                          height: 40,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                    temCel
+                        ? Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
-                              Text(
-                                'Telefone :',
-                                style: GoogleFonts.roboto(
-                                  fontSize: 16,
-                                  letterSpacing: .2,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w500,
+                              SizedBox(
+                                width: 200,
+                                height: 40,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Celular :',
+                                      style: GoogleFonts.roboto(
+                                        fontSize: 16,
+                                        letterSpacing: .2,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                    ),
+                                    Text(
+                                      pacCel.toString(),
+                                      style: GoogleFonts.roboto(
+                                        fontSize: 16,
+                                        letterSpacing: .2,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    )
+                                  ],
                                 ),
                               ),
-                              Text(
-                                pacCel.toString(),
-                                style: GoogleFonts.roboto(
-                                  fontSize: 16,
-                                  letterSpacing: .2,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w400,
+                              InkWell(
+                                onTap: () => {
+                                  ligarPaciente(
+                                      'tel:${pacCel.toString()}', context)
+                                },
+                                child: Container(
+                                  width: 45,
+                                  height: 40,
+                                  decoration: BoxDecoration(
+                                    color: Colors.blue[700],
+                                    borderRadius: BorderRadius.circular(
+                                      12,
+                                    ),
+                                    border: Border.all(
+                                      color: const Color(0xFF757575),
+                                    ),
+                                  ),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: const [
+                                      FaIcon(
+                                        FontAwesomeIcons.phoneAlt,
+                                        size: 20,
+                                        color: Colors.white,
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              )
+                              ),
+                              pacZap2
+                                  ? InkWell(
+                                      onTap: () => {
+                                        openWhats(pacCel),
+                                      },
+                                      child: Container(
+                                        width: 45,
+                                        height: 40,
+                                        decoration: BoxDecoration(
+                                          color: Colors.green[700],
+                                          borderRadius: BorderRadius.circular(
+                                            12,
+                                          ),
+                                          border: Border.all(
+                                            color: const Color(0xFF757575),
+                                          ),
+                                        ),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: const [
+                                            FaIcon(
+                                              FontAwesomeIcons.whatsapp,
+                                              size: 25,
+                                              color: Colors.white,
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    )
+                                  : Container(
+                                      width: 45,
+                                      height: 40,
+                                      color: Colors.white,
+                                    ),
                             ],
-                          ),
-                        ),
-                        InkWell(
-                          onTap: () => {
-                            ligarPaciente('tel:${pacCel.toString()}', context)
-                          },
-                          child: Container(
-                            width: 45,
-                            height: 40,
-                            decoration: BoxDecoration(
-                              color: Colors.blue[700],
-                              borderRadius: BorderRadius.circular(
-                                12,
-                              ),
-                              border: Border.all(
-                                color: const Color(0xFF757575),
-                              ),
-                            ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: const [
-                                FaIcon(
-                                  FontAwesomeIcons.phoneAlt,
-                                  size: 20,
-                                  color: Colors.white,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        InkWell(
-                          onTap: () => {
-                            openWhats(pacCel),
-                          },
-                          child: Container(
-                            width: 45,
-                            height: 40,
-                            decoration: BoxDecoration(
-                              color: Colors.green[700],
-                              borderRadius: BorderRadius.circular(
-                                12,
-                              ),
-                              border: Border.all(
-                                color: const Color(0xFF757575),
-                              ),
-                            ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: const [
-                                FaIcon(
-                                  FontAwesomeIcons.whatsapp,
-                                  size: 25,
-                                  color: Colors.white,
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
+                          )
+                        : const Text(''),
                   ],
                 ),
               ),

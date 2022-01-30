@@ -1,3 +1,7 @@
+## 1.0.2
+
+* Telefone passou para Int
+
 ## 1.0.1
 
 * Complementos no Read Me.

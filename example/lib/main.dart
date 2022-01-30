@@ -41,8 +41,8 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             ElevatedButton(
-              onPressed: () => ligarContato(
-                  context, '113999999999', '113999999999', true, false),
+              onPressed: () =>
+                  ligarContato(context, 113999999999, 113999999999, true, true),
               child: const Text('Click Me'),
             ),
           ],

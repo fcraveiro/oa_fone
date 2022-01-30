@@ -36,7 +36,7 @@ Veja na pasta `/example`.
           children: <Widget>[</br>
             ElevatedButton(</br>
               onPressed: () => ligarContato(</br>
-                  context, '13925223451', '91212112534', true, false),</br>
+                  context, 13925223451, 91212112534, true, false),</br>
               child: const Text('Click Me'),</br>
             ),</br>
           ],</br>
